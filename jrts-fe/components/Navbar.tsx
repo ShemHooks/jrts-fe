@@ -60,16 +60,16 @@ const handleLogin = () => {
       )}
 
       {/* Sidebar */}
-      <div
-        className={`
+    <div
+  className={`
           fixed md:static top-0 left-0 z-50
-          h-screen w-72 bg-[#F9F8F6] shadow-inner
-          flex flex-col justify-between p-6
-          transform transition-transform duration-300
+            h-dvh w-72 bg-[#F9F8F6] shadow-inner
+            flex flex-col justify-between p-6
+            transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
-          md:translate-x-0
-        `}
-      >
+      md:translate-x-0
+  `}
+>
         {/* Close Button (Mobile) */}
         <div className="md:hidden flex justify-end mb-4">
           <button onClick={() => setOpen(false)}>
@@ -121,11 +121,13 @@ const handleLogin = () => {
 
         {/* Logout */}
         <button
-          onClick={handleLogout}
-          className="flex items-center gap-3 border border-gray-200 p-3 rounded-md text-red-500 hover:bg-red-100 transition"
+        onClick={handleLogout}
+        className="absolute bottom-6 left-6 right-6
+        flex items-center gap-3 border border-gray-200 p-3
+        rounded-md text-red-500 hover:bg-red-100 transition"
         >
-          <LogOut size={18} />
-          Logout Account
+        <LogOut size={18} />
+        Logout Account
         </button>
       </div>
     </>
