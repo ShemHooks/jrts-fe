@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { Bell, Search } from "lucide-react";
 import { motion } from "framer-motion";
+import Button from "@/components/Buttons";
 
 export default function DashboardPage() {
   return (
@@ -11,9 +12,9 @@ export default function DashboardPage() {
       <Navbar />
 
       {/* Main content */}
-      <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 md:ml-72">
+      <main className="flex-1 w-full px-6 sm:px-3 lg:px-8 md:ml-72">
         {/* Top right notification */}
-        <div className="flex justify-end mb-4 pt-4">
+        <div className="flex justify-end mb-4 pt-4 sm-10">
           <Link
             href="/notifications"
             className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-gray-200 transition text-sm sm:text-base"
@@ -30,6 +31,7 @@ export default function DashboardPage() {
     grid-cols-3
     gap-3
     sm:grid-cols-3
+    mb-6
   "
 >
           {/* Active */}
@@ -89,11 +91,25 @@ export default function DashboardPage() {
             </p>
           </motion.div>
         </section>
+              {/*Show List Number By...*/}
 
         {/* Search + Sort */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          {/* Search */}
+        <section className="grid grid-cols-3 gap-3 sm:grid-cols-3 ">
           <div className="relative">
+              <motion.select
+              className="w-full p-3 rounded-lg  border border-gray-300 mb-4
+              focus:outline-none focus:ring-3 focus:ring-blue-500 bg-white text-sm sm:text-base"
+            >
+              <option>10</option>
+              <option>15</option>
+              <option>20</option>
+              <option>50</option>
+            </motion.select>
+
+          </div>
+          {/* Search */}
+
+          <div className="relative mb-4">
             <Search
               size={18}
               className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -174,24 +190,24 @@ export default function DashboardPage() {
                     user: "Mike Gray Wilson",
                     status: "TO BE APPROVE",
                   },
-                ].map((row) => (
-                  <tr key={row.id}>
-                    <td className="p-3">{row.id}</td>
-                    <td className="p-3">Text</td>
-                    <td className="p-3 text-blue-500">{row.dept}</td>
-                    <td className="p-3 text-blue-500">{row.user}</td>
-                    <td className="p-3">2026/02/13</td>
-                    <td className="p-3 text-green-600 font-medium">
-                      MENTAINANCE
-                    </td>
-                    <td
-                      className={`p-3 font-semibold ${
-                        row.status === "DONE"
-                          ? "text-green-600"
-                          : row.status === "TO BE APPROVE"
-                          ? "text-red-600"
-                          : "text-yellow-500"
-                      }`}
+                  ].map((row) => (
+                    <tr key={row.id}>
+                      <td className="p-3">{row.id}</td>
+                      <td className="p-3">Text</td>
+                      <td className="p-3 text-blue-500">{row.dept}</td>
+                      <td className="p-3 text-blue-500">{row.user}</td>
+                      <td className="p-3">2026/02/13</td>
+                      <td className="p-3 text-green-600 font-medium">
+                        MENTAINANCE
+                      </td>
+                      <td
+                        className={`p-3 font-semibold ${
+                          row.status === "DONE"
+                            ? "text-green-600"
+                            : row.status === "TO BE APPROVE"
+                            ? "text-red-600"
+                            : "text-yellow-500"
+                        }`}
                     >
                       {row.status}
                     </td>
