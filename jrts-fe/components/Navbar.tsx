@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, Home, User, Building2, LogOut } from "lucide-react";
+import { Menu, X, Home, User, Building2, LogOut, Logs } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -67,7 +67,7 @@ export default function Navbar() {
             <p className="text-xs text-gray-500 tracking-wide">MAIN</p>
 
             <Link
-              href="/dashboard"
+              href="/superadmin/dashboard"
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
             >
@@ -76,7 +76,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/employee"
+              href="/superadmin/employee"
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
             >
@@ -85,13 +85,24 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/department"
+              href="/superadmin/department"
               onClick={() => setOpen(false)}
               className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
             >
               <Building2 size={18} />
               Department
             </Link>
+            <Link
+            href="/superadmin/formarchrives"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
+            >
+            <Logs size={18} />
+            Form Archrives
+            </Link>
+
+
+
           </nav>
         </div>
 
