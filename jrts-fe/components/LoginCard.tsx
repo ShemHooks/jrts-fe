@@ -11,7 +11,7 @@ const [password, setPassword] = useState("");
 
 const handleLogin = () => {
 // For now, just redirect
-router.replace("/dashboard");
+router.replace("/superadmin/dashboard");
 };
 
 return (
