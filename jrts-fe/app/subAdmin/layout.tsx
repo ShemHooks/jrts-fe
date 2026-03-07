@@ -1,17 +1,38 @@
 "use client";
 
-export default function FormArchivesPage() {
+import Navbar from "@/components/Navbar";
+import Subnavbar from "@/components/Subnavbar";
+import { Bell } from "lucide-react";
+import Link from "next/link";
+
+export default function SuperAdminLayout({
+children,
+}: {
+children: React.ReactNode;
+}) {
 return (
-<>
-    <div className="flex items-center justify-between mb-4 pt-4">
-    <p className="text-lg font-semibold">Form Archives</p>
+<div className="min-h-screen bg-[#F9F8F6] flex overflow-x-hidden">
+    
+    {/* Sidebar */}
+    <Subnavbar />
+
+    {/* Page Content */}
+    <main className="flex-1 w-full px-6 sm:px-3 lg:px-8 md:ml-72">
+
+    {/* Global Header */}
+    <div className="flex justify-end mb-4 pt-4">
+        <Link
+        href="/notifications"
+        className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-gray-200 transition text-sm"
+        >
+        Notifications
+        <Bell size={18} />
+        </Link>
     </div>
 
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-    <p className="text-gray-400 text-sm">
-        Form archives content will go here...
-    </p>
-    </div>
-</>
+    {children}
+
+    </main>
+</div>
 );
 }

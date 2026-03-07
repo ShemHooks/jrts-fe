@@ -46,11 +46,11 @@ return(
         {/* Header */}
         <div className="h-16 flex items-center justify-between px-5 border-b">
         <div>
-            <p className="text-xs text-gray-500 tracking-wide">ADMIN</p>
+            <p className="text-xs text-gray-500 tracking-wide">Department Admin: Human Resources</p>
             <p className="font-semibold text-sm">
-            Saul Cyvan Soberano
+            Andrie Miguel Sabio
             </p>
-            <p className="text-xs text-gray-500">ID: 2023-00001</p>
+            <p className="text-xs text-gray-500">ID: 2023-00002</p>
         </div>
 
         <button
@@ -82,22 +82,13 @@ return(
             <User size={18} />
             Employee
         </Link>
-
-        <Link
-            href="/superadmin/department"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
-        >
-            <Building2 size={18} />
-            Department
-        </Link>
         <Link
         href="/superadmin/formarchrives"
         onClick={() => setOpen(false)}
         className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
         >
         <Logs size={18} />
-        Form Archrives
+        Employee Archive   
         </Link>
 
 
