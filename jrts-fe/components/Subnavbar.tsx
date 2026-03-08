@@ -66,7 +66,7 @@ return(
         <p className="text-xs text-gray-500 tracking-wide">MAIN</p>
 
         <Link
-            href="/superadmin/dashboard"
+            href="/subAdmin/dashboard"
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
         >
@@ -75,15 +75,15 @@ return(
         </Link>
 
         <Link
-            href="/superadmin/employee"
+            href="/subAdmin/employee"
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
         >
             <User size={18} />
-            Employee
+            Employees
         </Link>
         <Link
-        href="/superadmin/formarchrives"
+        href="/subAdmin/employeearchive"
         onClick={() => setOpen(false)}
         className="flex items-center gap-3 px-4 py-3 border border-gray-400 text-gray-700 hover:bg-gray-200 transition"
         >
